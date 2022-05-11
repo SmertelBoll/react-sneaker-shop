@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const fetchSneakers = () => (dispatch) => {
    dispatch(setLoaded(false))
-   axios.get(`http://localhost:3001/sneakers`).then((resp) => {
+   axios.get(`https://react-sneaker-shop.vercel.app/sneakers`).then((resp) => {
       dispatch(setSneakers(resp.data))
    })
 }
