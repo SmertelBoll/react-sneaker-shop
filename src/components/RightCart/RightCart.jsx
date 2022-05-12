@@ -38,7 +38,7 @@ function RightCart({ items, onDelBuy, totalPrice }) {
       <div ref={cartBlackRef} className="overlay">
          <div ref={cartWhiteRef} className="right-cart">
             <div className="right-cart__header">
-               <h2>Корзина</h2>
+               <h2>Кошик</h2>
                <button
                   className='button-card button-card__delete'
                   ref={cartButtonCloseRef}
@@ -65,11 +65,11 @@ function RightCart({ items, onDelBuy, totalPrice }) {
                <footer>
                   <div className="right-cart__text">
                      <p>
-                        <span>Итого:</span>
+                        <span>Всього:</span>
                         <b>{totalPrice} грн.</b>
                      </p>
                      <p>
-                        <span>Налог 5%:</span>
+                        <span>Податок 5%:</span>
                         <b>{Math.ceil(totalPrice * 0.05)} грн.</b>
                      </p>
                   </div>
@@ -77,7 +77,7 @@ function RightCart({ items, onDelBuy, totalPrice }) {
                      className="right-cart__button"
                      onClick={addToBought}
                   >
-                     <span>Оформить заказ</span>
+                     <span>Оформити заказ</span>
                      <img src="img/arrow.svg" alt="" />
                   </button>
                </footer>
@@ -85,13 +85,13 @@ function RightCart({ items, onDelBuy, totalPrice }) {
             {saved.length === 0 && !successBuy &&
                <div className="right-cart__empty-success">
                   <img width={120} height={120} src="img/emptyCart.jpg" alt="" />
-                  <h3 className="right-cart__empty-h3">Корзина пустая</h3>
-                  <p>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
+                  <h3 className="right-cart__empty-h3">Кошик пустий</h3>
+                  <p>Добавте хоча б одну пару кросівок, щоб зробити замовлення.</p>
                   <button
                      ref={cartButtonBackRef}
                      className="button-back"
                   >
-                     <span>Вернуться назад</span>
+                     <span>Повернутись назад</span>
                      <img src="img/arrow.svg" alt="" />
                   </button>
                </div>
@@ -99,13 +99,13 @@ function RightCart({ items, onDelBuy, totalPrice }) {
             {saved.length === 0 && successBuy &&
                <div className="right-cart__empty-success">
                   <img width={83} height={120} src="img/successBuy.jpg" alt="" />
-                  <h3 className="right-cart__success-h3">Заказ оформлен!</h3>
-                  <p>Ваш заказ скоро будет передан курьерской доставке</p>
+                  <h3 className="right-cart__success-h3">Заказ оформлений!</h3>
+                  <p>Ваше замовлення незабаром буде передане кур'єрській доставці</p>
                   <button
                      ref={cartButtonBackRef}
                      className="button-back"
                   >
-                     <span>Вернуться назад</span>
+                     <span>Повернутись назад</span>
                      <img src="img/arrow.svg" alt="" />
                   </button>
 

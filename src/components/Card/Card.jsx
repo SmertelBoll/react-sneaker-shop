@@ -42,7 +42,7 @@ function Card({ id, name, imageUrl, price, onAddLike, onAddBuy, onDelBuy, onDelL
 
          <div className="card__footer">
             <div className="card__price-block">
-               <span>ЦЕНА:</span>
+               <span>ЦІНА:</span>
                <p>{price} грн.</p>
             </div>
             {saved.includes(id)

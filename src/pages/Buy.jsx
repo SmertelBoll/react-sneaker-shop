@@ -9,7 +9,7 @@ function Buy({ items, onAddBuy, onAddLike, onDelBuy, onDelLike }) {
 
    return (
       <div>
-         <NamePage>Мои покупки</NamePage>
+         <NamePage>Мої покупки</NamePage>
          {saved.length > 0
             ? <div className="sneakers">
                {items.map(obj => (saved.includes(obj.id) &&
@@ -29,11 +29,11 @@ function Buy({ items, onAddBuy, onAddLike, onDelBuy, onDelLike }) {
             </div>
             : <div className="sneakers-empty">
                <p className="sneakers-empty__emoji">😔</p>
-               <h2>У вас нет заказов</h2>
-               <p className="sneakers-empty__text">Вы нищеброд?<br />Оформите хотя бы один заказ.</p>
+               <h2>У вас немає заказів</h2>
+               <p className="sneakers-empty__text">Ви скупердяй?<br />Оформіть хоча б одне замовлення.</p>
                <NavLink to='/'>
                   <button className="button-back">
-                     <span>Вернуться назад</span>
+                     <span>Повернутись назад</span>
                      <img src="img/arrow.svg" alt="" />
                   </button>
                </NavLink>

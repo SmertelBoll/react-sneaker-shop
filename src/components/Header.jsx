@@ -30,7 +30,7 @@ function Header({ items, onDelBuy }) {
                   <img width={40} height={40} src="img/logo.png" alt="123" />
                   <div className="header__text">
                      <h3>REACT SNEAKERS</h3>
-                     <p>Магазин лучших кроссовок</p>
+                     <p>Магазин найкращих кросівок</p>
                   </div>
                </div>
             </NavLink>
