@@ -22,13 +22,13 @@ function Home({ items, onAddBuy, onAddLike, onDelBuy, onDelLike }) {
    return (
       <div>
          <div className="search">
-            <h1>Все кроссовки</h1>
+            <h1>Всі кросівки</h1>
             {isLoaded &&
                <div className="search__block">
                   <input
                      onChange={typingName}
                      type="text"
-                     placeholder='Поиск...'
+                     placeholder='Пошук...'
                      value={searchName}
                   />
 
