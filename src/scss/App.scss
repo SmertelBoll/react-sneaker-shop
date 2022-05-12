@@ -81,7 +81,7 @@ body {
 }
 
 .search {
-   padding-bottom: 40px;
+   margin-bottom: 40px;
    display: flex;
    justify-content: space-between;
 
@@ -114,6 +114,7 @@ body {
    display: flex;
    flex-wrap: wrap;
    margin: -20px;
+   justify-content: space-around;
 }
 
 .sneakers-empty {
@@ -328,11 +329,15 @@ body {
    display: flex;
    flex-direction: column;
 
-   h2 {
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 29px;
+   &__header {
       margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      h2 {
+         font-weight: 700;
+         font-size: 24px;
+         line-height: 29px;
+      }
    }
 
    &__content {
@@ -466,6 +471,57 @@ body {
          top: 20px;
          transform: rotate(180deg);
       }
+}
+
+@media (max-width: 768px) {
+   .search {
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+         margin-bottom: 20px;
+      }
+
+      &__block {
+         width: 100%;
+         input {
+            width: 100%;
+         }
+      }
+      
+   }
+}
+
+@media (max-width: 681px) {
+   .content, .header {
+      padding-left: 20px;
+      padding-right: 20px;
+   }
+   .card {
+      margin: 10px;
+   }
+   .sneakers {
+      margin: -10px;
+   }
+   body {
+      padding: 10px;
+   }
+}
+
+@media (max-width: 576px) {
+   .header {
+      flex-direction: column;
+      align-items: center;
+
+      &__left {
+         margin-bottom: 30px;
+      }
+   }
+
+   .right-cart {
+      width: 100%;
+   }
+
 }
 
 

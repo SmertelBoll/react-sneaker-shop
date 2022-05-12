@@ -6,7 +6,8 @@ import RightCartItem from './RightCartItem'
 function RightCart({ items, onDelBuy, totalPrice }) {
    const cartBlackRef = useRef()
    const cartWhiteRef = useRef()
-   const cartButtonRef = useRef()
+   const cartButtonBackRef = useRef()
+   const cartButtonCloseRef = useRef()
 
    const dispatch = useDispatch()
 
@@ -16,7 +17,8 @@ function RightCart({ items, onDelBuy, totalPrice }) {
 
    const handleOutsideClick = (e) => {
       const path = e.path || (e.composedPath && e.composedPath())   // для фаєрфокса
-      if (path.includes(cartBlackRef.current) && (!path.includes(cartWhiteRef.current) || path.includes(cartButtonRef.current))) {  //. !e.path.includes(sortRef.current) для хрома норм
+      if (path.includes(cartBlackRef.current) &&
+         (!path.includes(cartWhiteRef.current) || path.includes(cartButtonBackRef.current) || path.includes(cartButtonCloseRef.current))) {  //. !e.path.includes(sortRef.current) для хрома норм
          dispatch(openCart(false))
          document.body.style.overflow = "auto";  // додаємо загальний скрол
          setSuccessBuy(false)
@@ -35,7 +37,15 @@ function RightCart({ items, onDelBuy, totalPrice }) {
    return (
       <div ref={cartBlackRef} className="overlay">
          <div ref={cartWhiteRef} className="right-cart">
-            <h2>Корзина</h2>
+            <div className="right-cart__header">
+               <h2>Корзина</h2>
+               <button
+                  className='button-card button-card__delete'
+                  ref={cartButtonCloseRef}
+               >
+                  <img src="img/delete.svg" alt="" />
+               </button>
+            </div>
 
             {saved.length > 0 &&
                <div className="right-cart__content">
@@ -78,7 +88,7 @@ function RightCart({ items, onDelBuy, totalPrice }) {
                   <h3 className="right-cart__empty-h3">Корзина пустая</h3>
                   <p>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
                   <button
-                     ref={cartButtonRef}
+                     ref={cartButtonBackRef}
                      className="button-back"
                   >
                      <span>Вернуться назад</span>
@@ -92,7 +102,7 @@ function RightCart({ items, onDelBuy, totalPrice }) {
                   <h3 className="right-cart__success-h3">Заказ оформлен!</h3>
                   <p>Ваш заказ скоро будет передан курьерской доставке</p>
                   <button
-                     ref={cartButtonRef}
+                     ref={cartButtonBackRef}
                      className="button-back"
                   >
                      <span>Вернуться назад</span>
