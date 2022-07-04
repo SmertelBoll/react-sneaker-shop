@@ -11,7 +11,7 @@ function Liked({ items, onAddBuy, onAddLike, onDelBuy, onDelLike }) {
       <div>
          <NamePage>Мої закладки</NamePage>
          {liked.length > 0
-            ? <div className="sneakers">
+            ? <div className="sneakers justify-content-center">
                {items.map(obj => (liked.includes(obj.id) &&
                   <Card
                      key={obj.id}

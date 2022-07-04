@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const fetchSneakers = () => (dispatch) => {
    dispatch(setLoaded(false))
-   axios.get(`/sneakers`).then((resp) => {
+   axios.get(`/sneakers`).then((resp) => {   //http://localhost:3001
       dispatch(setSneakers(resp.data))
    })
 }

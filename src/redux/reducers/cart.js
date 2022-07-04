@@ -1,7 +1,8 @@
 const initialState = {
-   items: {},
+   bought: [],  // вже куплені
+   willBeBought: {},
    opened: false,
-   saved: [],
+   saved: [],  // в корзині
    totalPrice: 0,
 }
 
@@ -16,14 +17,14 @@ const cart = (state = initialState, action) => {
       case 'ADD_TO_CART': {
          return {
             ...state,
-            items: { ...state.items, [action.payload.id]: action.payload },
+            willBeBought: { ...state.willBeBought, [action.payload.id]: action.payload },
             saved: [...state.saved, action.payload.id],
             totalPrice: state.totalPrice + action.payload.price
          }
       }
       case 'DELETE_FROM_CART': {
-         const newItems = { ...state.items }
-         delete newItems[action.payload.id]
+         const newWillBeBought = { ...state.willBeBought }
+         delete newWillBeBought[action.payload.id]
 
          const newSaved = [...state.saved]
          let indexDel = newSaved.indexOf(action.payload.id)
@@ -33,19 +34,32 @@ const cart = (state = initialState, action) => {
 
          return {
             ...state,
-            items: newItems,
+            willBeBought: newWillBeBought,
             saved: newSaved,
             totalPrice: state.totalPrice - action.payload.price
 
          }
       }
-      case 'CLEAR_CART': {
+      case 'BUY': {
          return {
             ...state,
+            bought: [
+               ...state.bought,
+               ...Object.values(state.willBeBought)
+            ],
+            willBeBought: {},
             saved: [],
             totalPrice: 0,
          }
       }
+      // case 'CLEAR_CART': {     поки не реалізовано
+      //    return {
+      //       ...state,
+      //       willBeBought: {},
+      //       saved: [],
+      //       totalPrice: 0,
+      //    }
+      // }
 
       default:
          return state

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearCart, openCart } from '../../redux/actions/cart'
+import { buy, openCart } from '../../redux/actions/cart'
 import RightCartItem from './RightCartItem'
 
 function RightCart({ items, onDelBuy, totalPrice }) {
@@ -26,7 +26,7 @@ function RightCart({ items, onDelBuy, totalPrice }) {
    }
 
    const addToBought = () => {
-      dispatch(clearCart())
+      dispatch(buy())
       setSuccessBuy(true)
    }
 

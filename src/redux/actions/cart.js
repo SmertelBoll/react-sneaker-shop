@@ -13,6 +13,10 @@ export const delFromCart = (sneakersObj) => ({
    payload: sneakersObj,
 })
 
-export const clearCart = () => ({
-   type: 'CLEAR_CART'
+export const buy = () => ({
+   type: 'BUY',
 })
+
+// export const clearCart = () => ({   поки не реалізовано
+//    type: 'CLEAR_CART',
+// })

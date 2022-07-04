@@ -38,7 +38,7 @@ function App() {
          <div className="content">
             <Routes>
                <Route path='/cart' element={<Buy
-                  items={items} onAddBuy={onAddBuy} onAddLike={onAddLike}
+                  onAddBuy={onAddBuy} onAddLike={onAddLike}
                   onDelBuy={onDelBuy} onDelLike={onDelLike}
                />} />
                <Route path='/saved' element={<Liked

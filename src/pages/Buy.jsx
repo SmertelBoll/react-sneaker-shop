@@ -4,15 +4,15 @@ import { NavLink } from 'react-router-dom'
 import Card from '../components/Card/Card'
 import NamePage from '../components/NamePage'
 
-function Buy({ items, onAddBuy, onAddLike, onDelBuy, onDelLike }) {
-   const saved = useSelector(state => state.cart.saved)
+function Buy({ onAddBuy, onAddLike, onDelBuy, onDelLike }) {
+   const bought = useSelector(state => state.cart.bought)
 
    return (
       <div>
          <NamePage>Мої покупки</NamePage>
-         {saved.length > 0
-            ? <div className="sneakers">
-               {items.map(obj => (saved.includes(obj.id) &&
+         {bought.length > 0
+            ? <div className="sneakers justify-content-center">
+               {bought.map(obj => (
                   <Card
                      key={obj.id}
                      id={obj.id}
@@ -29,7 +29,7 @@ function Buy({ items, onAddBuy, onAddLike, onDelBuy, onDelLike }) {
             </div>
             : <div className="sneakers-empty">
                <p className="sneakers-empty__emoji">😔</p>
-               <h2>У вас немає заказів</h2>
+               <h2>У вас немає покупок</h2>
                <p className="sneakers-empty__text">Ви скупердяй?<br />Оформіть хоча б одне замовлення.</p>
                <NavLink to='/'>
                   <button className="button-back">

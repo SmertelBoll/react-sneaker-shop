@@ -117,6 +117,10 @@ body {
    justify-content: space-around;
 }
 
+.justify-content-center {
+   justify-content: center;
+}
+
 .sneakers-empty {
    text-align: center;
    height: 450px;
@@ -472,6 +476,12 @@ body {
          transform: rotate(180deg);
       }
 }
+
+// @media (max-width: 1180px) {
+//    .sneakers {
+//       justify-content: space-around;
+//    }
+// }
 
 @media (max-width: 768px) {
    .search {
