@@ -1,10 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import Card from '../components/Card/Card'
+import CardWithoutButtons from '../components/Card/CardWithoutButtons'
 import NamePage from '../components/NamePage'
 
-function Buy({ onAddBuy, onAddLike, onDelBuy, onDelLike }) {
+function Buy() {
    const bought = useSelector(state => state.cart.bought)
 
    return (
@@ -13,17 +13,7 @@ function Buy({ onAddBuy, onAddLike, onDelBuy, onDelLike }) {
          {bought.length > 0
             ? <div className="sneakers justify-content-center">
                {bought.map(obj => (
-                  <Card
-                     key={obj.id}
-                     id={obj.id}
-                     name={obj.name}
-                     imageUrl={obj.imageUrl}
-                     price={obj.price}
-                     onAddLike={onAddLike}
-                     onAddBuy={onAddBuy}
-                     onDelBuy={onDelBuy}
-                     onDelLike={onDelLike}
-                  />
+                  <CardWithoutButtons name={obj.name} imageUrl={obj.imageUrl} price={obj.price} />
                ))
                }
             </div>

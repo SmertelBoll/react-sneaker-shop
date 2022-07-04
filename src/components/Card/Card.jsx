@@ -58,8 +58,6 @@ function Card({ id, name, imageUrl, price, onAddLike, onAddBuy, onDelBuy, onDelL
                   <img src="img/plus.svg" alt="" />
                </button>
             }
-
-
          </div>
       </div>
    )

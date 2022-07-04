@@ -37,10 +37,7 @@ function App() {
          <Header items={items} onDelBuy={onDelBuy} />
          <div className="content">
             <Routes>
-               <Route path='/cart' element={<Buy
-                  onAddBuy={onAddBuy} onAddLike={onAddLike}
-                  onDelBuy={onDelBuy} onDelLike={onDelLike}
-               />} />
+               <Route path='/cart' element={<Buy />} />
                <Route path='/saved' element={<Liked
                   items={items} onAddBuy={onAddBuy} onAddLike={onAddLike}
                   onDelBuy={onDelBuy} onDelLike={onDelLike}
