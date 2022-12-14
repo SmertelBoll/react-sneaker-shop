@@ -3,7 +3,8 @@ import axios from "axios"
 
 export const fetchSneakers = () => (dispatch) => {
    dispatch(setLoaded(false))
-   axios.get(`/sneakers`).then((resp) => {   //http://localhost:3001
+   axios.get(`https://639a0360e916a46ec0a69694.mockapi.io/sneakers`).then((resp) => {   //http://localhost:3001
+      console.log(resp)
       dispatch(setSneakers(resp.data))
    })
 }
